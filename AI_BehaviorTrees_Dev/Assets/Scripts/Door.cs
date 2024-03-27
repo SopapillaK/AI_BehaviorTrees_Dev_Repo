@@ -10,8 +10,23 @@ public class Door : MonoBehaviour
     Vector3 closedRotation = new Vector3(0, 0, 0);
     Vector3 openRotation = new Vector3(0, -135, 0);
 
-    // Start is called before the first frame update
-    void Start()
+    public void ToggleClosed()
+    {
+        if (isClosed == false)
+            isClosed = true;
+        else
+            isClosed = false;
+    }
+
+    public void ToggleLocked()
+    {
+        if (isLocked == false)
+            isLocked = true;
+        else
+            isLocked = false;
+    }
+
+    void Update()
     {
         if (isClosed)
         {

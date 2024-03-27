@@ -121,8 +121,8 @@ public class JumpForJoy : Task
 
     public override void run()
     {
-        //Debug.Log("Jumping for joy");
-        mEntity.GetComponent<Rigidbody>().AddForce(Vector3.up * 5f);
+        Debug.Log("Jumping for joy");
+        mEntity.GetComponent<Rigidbody>().AddForce(Vector3.up * 200.0f);
         succeeded = true;
         EventBus.TriggerEvent(TaskFinished);
     }

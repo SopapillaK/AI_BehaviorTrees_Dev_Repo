@@ -43,9 +43,12 @@ public class BruceBanner : MonoBehaviour
         Task isDoorNotLocked = new IsFalse(theDoor.isLocked);
         Task waitABeat = new Wait(0.5f);
         Task openDoor = new OpenDoor(theDoor);
+        Task waitABeat2 = new Wait(0.5f);
+        Task jump = new JumpForJoy(this.gameObject);
         taskList.Add(isDoorNotLocked);
         taskList.Add(waitABeat);
         taskList.Add(openDoor);
+        taskList.Add(jump);
         Sequence openUnlockedDoor = new Sequence(taskList);
 
         // barge a closed door
